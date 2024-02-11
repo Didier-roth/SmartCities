@@ -4,7 +4,7 @@
 ce repository est utilisé dans le cadre de du cours de Smart Cities suivi pendant mon master en Ingénierie industrielle a la haute école de la province de Liege. la finalité de ce projet est devellgopé un éclairage intelligent dans un couloir de l'école. 
 nous suivrons un tutoriel au préalable afin de prendre en main le développement avec :
 - micro-Python
-- starter kit grove de speeds studio
+- starter kit grove de seeeds studio
 - raspberry pi pico W
 
 ## Raspberry Pi pico W
