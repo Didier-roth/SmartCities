@@ -11,7 +11,7 @@ nous suivrons un tutoriel au préalable afin de prendre en main le développemen
 Le Raspberry Pi Pico W est une carte de développement microcontrôleur dotée d'une connectivité Wi-Fi. Elle dispose de 40 broches GPIO (General Purpose Input Output) qui peuvent être utilisées pour contrôler une variété de périphériques et de capteurs.
 
 Voici le schéma de brochage du Raspberry Pi Pico W :
-![enter image description here](https://user-images.githubusercontent.com/60603675/223663633-08f1284b-25e7-4a80-b310-281f1674de89.png)
+![Schema Raspberry PI Pico W](https://github.com/Didier-roth/SmartCities/blob/ressources/223663633-08f1284b-25e7-4a80-b310-281f1674de89.png)
 
 # Carte Grove
 La carte Grove de Seeed Studio est une carte d'extension qui permet de connecter facilement des capteurs et des modules au Raspberry Pi. Elle utilise une interface à broches standardisée appelée connecteur Grove, qui est compatible avec des centaines de modules Grove différents.
