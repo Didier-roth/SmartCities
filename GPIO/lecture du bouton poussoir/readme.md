@@ -1,9 +1,23 @@
 ﻿# lecture d'un bouton
-ce programme permet d'allumer une LED si le bouton est pressé. 
-les elements interessant a retenir ici sont :
-le constructeur de la classe Pin
-la fonction Value de la classe Pin
+Ces programmes permettent de prendre en main la lecture d'un bouton poussoir.
+pour cela, deux programmes :
+- Button_Light
+- Control_LED_On_Off
 
+## Button_Light
+ce programme permet d'allumer une LED lorsqu'on appuie sur un bouton poussoir.
+la LED s'éteint lorsque le bouton est relaché.
+Le bouton est connecté au pin 16 et la LED au pin 18.
+
+
+
+## Control_LED_On_Off
+ce programme permet d'allumer et d'éteindre une LED en appuyant sur un bouton poussoir.
+la LED s'allume lorsqu'on appuie sur le bouton et s'éteint lorsqu'on relache le bouton.
+le bouton est connecté au pin 16 et la LED au pin 18.
+
+
+# Elements important utilisés
 ## constructeur 
 afin de construire un objet de classe Pin, nous utiliserons le constructeur :
 
