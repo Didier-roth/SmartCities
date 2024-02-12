@@ -21,13 +21,13 @@ On constate que la LED est eteinte au depart. une fois le programme executé, la
 ## Blink_While-Loop
 ce programme permet de faire clignoter une LED.
 on utilise une boucle while pour faire clignoter la LED a une frequence de 0.5Hz.
-<img src="https://github.com/Didier-roth/SmartCities/blob/ressources/GPIO/controle%20d'une%20led/WHILE_LOOP.gif" width=200>
+<img src="https://github.com/Didier-roth/SmartCities/blob/ressources/GPIO/controle%20d'une%20led/WHILE_LOOP.gif" width=200 align="center">
 
 ## On_Off_for-Loop
 ce programme permet d'allumer et d'éteindre une LED un nombre de fois determiné.
 on utilise une boucle for pour allumer et éteindre la LED 10 fois.
 le clignotement se fait a une frequence de 0.5Hz.
-<img src="https://github.com/Didier-roth/SmartCities/blob/ressources/GPIO/controle%20d'une%20led/FOR_LOOP.gif" width=200>
+<img src="https://github.com/Didier-roth/SmartCities/blob/ressources/GPIO/controle%20d'une%20led/FOR_LOOP.gif" width=200 align="center">
 
 # Elements important utilisés
 ## constructeur 
