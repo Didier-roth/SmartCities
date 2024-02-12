@@ -1,6 +1,8 @@
 ﻿# les interuptions
 ce programme a pour but d'interagir lors de l'appui sur un bouton poussoir afin d'allumer une led au travers d'interruption au niveau de la programmation
 
+<img src="https://github.com/Didier-roth/SmartCities/blob/ressources/GPIO/Interruption/426635131_7576481725729938_1565086408004881085_n.gif">
+
 ## le handler 
 le handler sera simplement une méthode qui sera appelé par le système. elle est appelé lorsque l'interruption est déclenchée.
 voici un exemple de handler :
