@@ -11,9 +11,11 @@ ce programme permet d'allumer une LED.
 Avant l'execution du programme, il faut connecter la LED a la pin 16 du Raspberry PI Pico W.
 On constate que la LED est eteinte au depart. une fois le programme executé, la LED s'allume.
 
-<img src="https://raw.github.com/Didier-roth/SmartCities/ressources/GPIO/controle%20d'une%20led/LED_OFF.jpg" width=200>
 
-<img src="https://raw.github.com/Didier-roth/SmartCities/ressources/GPIO/controle%20d'une%20led/LED_ON.jpg" width=200>
+|<img src="https://raw.github.com/Didier-roth/SmartCities/ressources/GPIO/controle%20d'une%20led/LED_OFF.jpg" width=200>|   |<img src="https://raw.github.com/Didier-roth/SmartCities/ressources/GPIO/controle%20d'une%20led/LED_ON.jpg" width=200>|
+|---|---|---|
+
+
 
 
 ## Blink_While-Loop
