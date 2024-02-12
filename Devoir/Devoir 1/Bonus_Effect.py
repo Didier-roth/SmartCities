@@ -22,7 +22,7 @@ BUTTON.irq(trigger=Pin.IRQ_FALLING, handler=callback)
 while True:
     if (change):
         change = False
-        for i in range(0, 5):
+        for i in range(5,0, -1):
             LED.value(1)
             sleep(i / 10)
             LED.value(0)

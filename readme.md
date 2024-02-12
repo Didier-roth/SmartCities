@@ -34,3 +34,8 @@ Thonny est un environnement de développement intégré (IDE) conçu pour le lan
 Thonny offre la possibilité de création, d'édition et d'exécution de programmes Python. Il dispose également d'un débogueur intégré, qui permet aux utilisateurs de déboguer leur code en temps réel afin d'identifier les erreurs de manière efficace.
 
 de plus, Thonny est compatible avec la plupart des versions de Python, y compris MicroPython.
+
+# Devoirs
+les devoirs egalement enregistré dans ce repo. ils sont accesible dans le repository Devoirs ou via les liens suivant : 
+- [Devoirs 1](https://github.com/Didier-roth/SmartCities/tree/main/Devoir/Devoir%201)
+- [Devoirs 2](https://github.com/Didier-roth/SmartCities/tree/main/Devoir/Devoir%202)
