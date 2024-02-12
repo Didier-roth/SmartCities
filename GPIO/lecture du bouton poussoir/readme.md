@@ -6,16 +6,17 @@ pour cela, deux programmes :
 
 ## Button_Light
 ce programme permet d'allumer une LED lorsqu'on appuie sur un bouton poussoir.
-la LED s'éteint lorsque le bouton est relaché.
+la LED s'éteint lorsque le bouton est pressé a nouveau.
 Le bouton est connecté au pin 16 et la LED au pin 18.
 
-
+<img src="https://github.com/Didier-roth/SmartCities/blob/ressources/GPIO/lecture%20du%20bouton%20poussoir/Button_light.gif" width=200>
 
 ## Control_LED_On_Off
 ce programme permet d'allumer et d'éteindre une LED en appuyant sur un bouton poussoir.
 la LED s'allume lorsqu'on appuie sur le bouton et s'éteint lorsqu'on relache le bouton.
 le bouton est connecté au pin 16 et la LED au pin 18.
 
+<img src="https://github.com/Didier-roth/SmartCities/blob/ressources/GPIO/lecture%20du%20bouton%20poussoir/Control_On_Off_with_Button.gif" width = 200>
 
 # Elements important utilisés
 ## constructeur 
