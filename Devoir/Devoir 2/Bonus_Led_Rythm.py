@@ -4,6 +4,8 @@ from utime import sleep, ticks_ms
 buzzer = PWM(Pin(27))
 RAS = ADC(0)
 BUTTON = machine.Pin(16,machine.Pin.IN)
+LED = PWM(Pin(18))
+LED.freq(500)
 
 
 temps = 0.4
@@ -16,65 +18,72 @@ rond = 4 * temps
 def DO(octave=6, vol=1000):
     buzzer.freq(int(32.7 * octave))
     buzzer.duty_u16(vol)
+    return int(32.7 * octave)
 
 
 def DOd(octave=6, vol=1000):
     buzzer.freq(int(34.65 * octave))
     buzzer.duty_u16(vol)
+    return int(34.65 * octave)
 
 
 def RE(octave=6, vol=1000):
     buzzer.freq(int(36.71 * octave))
     buzzer.duty_u16(vol)
+    return int(36.71 * octave)
 
 
 def REd(octave=6, vol=1000):
     buzzer.freq(int(38.89 * octave))
     buzzer.duty_u16(vol)
+    return int(38.89 * octave)
 
 
 def MI(octave=6, vol=1000):
     buzzer.freq(int(41.20 * octave))
     buzzer.duty_u16(vol)
+    return int(41.20 * octave)
 
 
 def FA(octave=6, vol=1000):
     buzzer.freq(int(43.65 * octave))
     buzzer.duty_u16(vol)
+    return int(43.65 * octave)
 
 
 def FAd(octave=6, vol=1000):
     buzzer.freq(int(46.25 * octave))
     buzzer.duty_u16(vol)
-
+    return int(46.25 * octave)
 
 def SOL(octave=6, vol=1000):
     buzzer.freq(int(49.00 * octave))
     buzzer.duty_u16(vol)
-
+    return int(49.00 * octave)
 
 def SOLd(octave=6, vol=1000):
     buzzer.freq(int(51.91 * octave))
     buzzer.duty_u16(vol)
-
+    return int(51.91 * octave)
 
 def LA(octave=6, vol=1000):
     buzzer.freq(int(55.00 * octave))
     buzzer.duty_u16(vol)
-
+    return int(55.00 * octave)
 
 def LAd(octave=6, vol=1000):
     buzzer.freq(int(58.27 * octave))
     buzzer.duty_u16(vol)
-
+    return int(58.27 * octave)
 
 def SI(octave=6, vol=1000):
     buzzer.freq(int(61.74 * octave))
     buzzer.duty_u16(vol)
-
+    return int(61.74 * octave)
 
 def N():
     buzzer.duty_u16(0)
+    return 0
 
 
 def check_volume():
@@ -86,37 +95,40 @@ def non_blocking_sleep(time):
     start = ticks_ms()
     while (ticks_ms() - start) < (time * 1000):
         buzzer.duty_u16(RAS.read_u16())
+
         pass
 
 
 def PlayNote(note, time, vol=1000, octave=6):
+    freq  = 0
     if (note == "DO"):
-        DO(octave, vol)
+        freq = DO(octave, vol)
     elif (note == "DOd"):
-        DOd(octave, vol)
+        freq = DOd(octave, vol)
     elif (note == "RE"):
-        RE(octave, vol)
+        freq = RE(octave, vol)
     elif (note == "REd"):
-        REd(octave, vol)
+        freq = REd(octave, vol)
     elif (note == "MI"):
-        MI(octave, vol)
+        freq = MI(octave, vol)
     elif (note == "FA"):
-        FA(octave, vol)
+        freq = FA(octave, vol)
     elif (note == "FAd"):
-        FAd(octave, vol)
+        freq = FAd(octave, vol)
     elif (note == "SOL"):
-        SOL(octave, vol)
+        freq = SOL(octave, vol)
     elif (note == "SOLd"):
-        SOLd(octave, vol)
+        freq = SOLd(octave, vol)
     elif (note == "LA"):
-        LA(octave, vol)
+        freq = LA(octave, vol)
     elif (note == "LAd"):
-        LAd(octave, vol)
+        freq = LAd(octave, vol)
     elif (note == "SI"):
-        SI(octave, vol)
+        freq = SI(octave, vol)
     else:
-        N()
+        freq = N()
 
+    LED.duty_u16(freq*100)
     if (time == "croche"):
         non_blocking_sleep(croche)
     elif (time == "noir"):
@@ -127,6 +139,8 @@ def PlayNote(note, time, vol=1000, octave=6):
         non_blocking_sleep(rond)
     else:
         N()
+    
+
 
 ode_joy_note = ["FA", "FA", "SOL", "LA", "LA", "SOL", "FA", "MI", "RE", "RE", "MI", "FA", "FA", "MI", "MI", "FA",
                 "FA", "FA", "SOL", "LA", "LA", "SOL", "FA", "MI", "RE", "RE", "MI", "FA", "MI", "RE", "RE", "RE",
@@ -144,8 +158,8 @@ ode_joy_octave = []
 for i in range(len(ode_joy_note)):
     ode_joy_octave.append(5)
 
-two_tiger_note = ["DO","RE","MI","Do",
-                  "DO","RE","MI","Do",
+two_tiger_note = ["DO","RE","MI","DO",
+                  "DO","RE","MI","DO",
                   "MI","FA","SOL",
                   "MI","FA","SOL",
                   "SOL","LA","SOL","FA","MI","DO",
@@ -202,10 +216,11 @@ while True:
     while i < (melody_len):
         print("melody_len boucle : " + str(melody_len))
         PlayNote((melody[melody_played])[i], (melody_time[melody_played])[i], RAS.read_u16(), (melody_octave[melody_played])[i])
+
         #print(i)
         #print(RAS.read_u16())
         i = i + 1
-    i=0    
+    i=0
     N()
     sleep(10)
 
