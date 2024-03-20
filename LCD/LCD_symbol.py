@@ -24,7 +24,8 @@ RAS = ADC(0)
 while True:
     sleep(1)
     d.clear()
-    d.print(str(RAS.read_u16()))
+    deg = ((360-0)/(65535-160))*(RAS.read_u16()-160)+0
+    d.print(str(deg))
     d.write(0)
     
 
