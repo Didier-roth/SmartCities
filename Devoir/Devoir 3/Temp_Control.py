@@ -15,7 +15,8 @@ i2c = I2C(1, scl=Pin(7), sda=Pin(6), freq=400000)
 d = LCD1602(i2c, 2, 16)
 sensor = dht.DHT11(Pin(18))
 RAS = ADC(0)
-LED = machine.Pin(16,machine.Pin.OUT)
+LED = PWM(Pin(16))
+LED.freq(500)
 buzzer = PWM(Pin(27))
 
 
@@ -49,6 +50,7 @@ last_buzzer = 0
 temp = 0.0
 SetTemp = 0
 LedState = False
+LedValue = 0
 BuzzerState = False
 
 while True:
@@ -89,14 +91,25 @@ while True:
     if (temp > SetTemp):
        if (ticks_ms() - last_blink) > ((blink_period * 1000)/2):
            if LedState:
-               LED.value(0)
+               LED.duty_u16(0)
                LedState = False
            else:
-               LED.value(1)
                LedState = True
            last_blink = ticks_ms()
+
+       if(LedState):
+           if(LedValue+300<35565):
+               LedValue = LedValue + 300
+               LED.duty_u16(LedValue)
+               print(LedValue)
+       else:
+           if(LedValue>0):
+               LedValue = LedValue - 300
+               LED.duty_u16(LedValue)
+               print(LedValue)
+
     else:
-        LED.value(0)
+        LED.duty_u16(0)
         LedState = False
 
 
